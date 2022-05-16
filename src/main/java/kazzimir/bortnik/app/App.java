@@ -35,7 +35,10 @@ import java.util.Objects;
 public class App {
     public static void main(String[] args) throws IOException, InterruptedException {
         MultiLayerNetwork multiLayerNetwork = buildMultiLayerNetwork();
-        for (int i = 0; i < 50; i++) {
+        Data dataSet = getDataSet();
+        DataSet dataN = dataSet.getDataN();
+        System.out.println(dataN);
+       /* for (int i = 0; i < 50; i++) {
             int iterator = 0;
             Data dataSet = getDataSet();
             try {
@@ -55,7 +58,7 @@ public class App {
                 System.out.println("END Epoch " + i);
                 save(multiLayerNetwork, i, iterator);
             }
-        }
+        }*/
     }
 
     private static void save(MultiLayerNetwork multiLayerNetwork, int i, int iterator) throws IOException {
@@ -86,7 +89,7 @@ public class App {
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
                 .seed(3)
                 .weightInit(WeightInit.XAVIER)
-                .updater(new Adam(0.0001))
+                .updater(new Adam(0.1))
                 .l2(1e-4)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .list()
