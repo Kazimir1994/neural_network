@@ -1,1 +1,1 @@
-scp  target/neural_network-1.0-SNAPSHOT-jar-with-dependencies.jar   kazzers_brazzers@93.84.109.202:/home/kazzers_brazzers/neural_network
+
